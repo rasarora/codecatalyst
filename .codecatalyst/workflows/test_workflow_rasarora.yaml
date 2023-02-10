@@ -4,6 +4,11 @@ RunMode: PARALLEL
 Compute:
   Type: EC2
   SharedInstance: True
+  
+Triggers:
+  - Type: PUSH
+    Branches:
+      - main
 
 Actions:
   Build1:
