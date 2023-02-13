@@ -23,6 +23,7 @@ Actions:
       Steps:
         - Run: pwd
         - Run: ls -l
+        - Run: echo $CATALYST_SOURCE_DIR_Build1
       Caching:
         FileCaching:
           - KeyName: key1
@@ -42,6 +43,8 @@ Actions:
         - Run: ls -l
         - Run: cd /codeaws/output
         - Run: ls -l
+        - Run: echo $CATALYST_SOURCE_DIR_Build1
+        - Run: echo $CATALYST_SOURCE_DIR_Build2
       Caching:
         FileCaching:
           - KeyName: key1
