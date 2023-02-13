@@ -3,7 +3,7 @@ SchemaVersion: "1.0"
 RunMode: PARALLEL
 Compute:
   Type: EC2
-  SharedInstance: True
+#   SharedInstance: True
   
 Triggers:
   - Type: PUSH
