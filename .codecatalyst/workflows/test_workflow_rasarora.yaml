@@ -18,6 +18,7 @@ Actions:
         - WorkflowSource
     Configuration:
       Steps:
+        - run: pwd
         - run: ls -R
       Caching:
         FileCaching:
