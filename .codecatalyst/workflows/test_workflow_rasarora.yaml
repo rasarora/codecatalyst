@@ -21,8 +21,8 @@ Actions:
         Fleet: test-fleet-rasarora
         Type: EC2
       Steps:
-        - run: pwd
-        - run: ls -R
+        - Run: pwd
+        - Run: ls -R
       Caching:
         FileCaching:
           - KeyName: key1
@@ -38,10 +38,10 @@ Actions:
         Fleet: test-fleet-rasarora
         Type: EC2
       Steps:
-        - run: pwd
-        - run: ls -R
-        - run: cd /codeaws/output
-        - run: ls -R
+        - Run: pwd
+        - Run: ls -R
+        - Run: cd /codeaws/output
+        - Run: ls -R
       Caching:
         FileCaching:
           - KeyName: key1
