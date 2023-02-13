@@ -12,7 +12,7 @@ Triggers:
 
 Actions:
   Build1:
-    Identifier: aws/github-actions-runner-gamma@v1
+    Identifier: aws/build-beta@v1
     Inputs:
       Sources:
         - WorkflowSource
@@ -30,7 +30,7 @@ Actions:
             RestoreKeys:
               - restore_key1
   Build2:
-    Identifier: aws/github-actions-runner-gamma@v1
+    Identifier: aws/build-beta@v1
     DependsOn:
       - Build1
     Configuration:
