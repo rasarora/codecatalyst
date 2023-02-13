@@ -19,14 +19,23 @@ Actions:
     Configuration:
       Steps:
         - run: ls -R
-        - run: echo hi > /codecatalyst/shared/hi.txt
-        - run: echo hi > hi.txt
+      Caching:
+        FileCaching:
+          - KeyName: key1
+            Path: /codeaws/output
+            RestoreKeys:
+              - restore_key1
   Build2:
     Identifier: aws/github-actions-runner-gamma@v1
     DependsOn:
       - Build1
     Configuration:
       Steps:
-        - run: cat /codecatalyst/shared/hi.txt
-        - run: ls
         - run: pwd
+        - run: ls -R
+        - run: cd /codeaws/output
+        - run: ls -R
+      Caching:
+        FileCaching:
+          - KeyName: key1
+            Path: /codeaws/output
