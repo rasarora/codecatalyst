@@ -22,7 +22,7 @@ Actions:
         Type: EC2
       Steps:
         - Run: pwd
-        - Run: ls -R
+        - Run: ls -l
       Caching:
         FileCaching:
           - KeyName: key1
@@ -39,9 +39,9 @@ Actions:
         Type: EC2
       Steps:
         - Run: pwd
-        - Run: ls -R
+        - Run: ls -l
         - Run: cd /codeaws/output
-        - Run: ls -R
+        - Run: ls -l
       Caching:
         FileCaching:
           - KeyName: key1
