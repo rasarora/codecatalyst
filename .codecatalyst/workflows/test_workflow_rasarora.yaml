@@ -1,8 +1,8 @@
 Name: test_workflow_rasarora
 SchemaVersion: "1.0"
 RunMode: PARALLEL
-Compute:
-  Type: EC2
+# Compute:
+#   Type: EC2
 #   SharedInstance: True
   
 Triggers:
@@ -17,6 +17,9 @@ Actions:
       Sources:
         - WorkflowSource
     Configuration:
+      Compute:
+        Fleet: test-fleet-rasarora
+        Type: EC2
       Steps:
         - run: pwd
         - run: ls -R
@@ -31,6 +34,9 @@ Actions:
     DependsOn:
       - Build1
     Configuration:
+      Compute:
+        Fleet: test-fleet-rasarora
+        Type: EC2
       Steps:
         - run: pwd
         - run: ls -R
