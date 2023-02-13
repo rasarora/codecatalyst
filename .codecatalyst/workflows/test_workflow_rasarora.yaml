@@ -23,6 +23,7 @@ Actions:
       Steps:
         - Run: pwd
         - Run: ls -l
+        - Run: env
         - Run: echo $CATALYST_SOURCE_DIR_Build1
       Caching:
         FileCaching:
