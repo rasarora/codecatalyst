@@ -3,6 +3,7 @@ SchemaVersion: "1.0"
 RunMode: PARALLEL
 Compute:
   Type: EC2
+  Fleet: test-fleet-rasarora
   SharedInstance: True
   
 Triggers:
@@ -17,9 +18,6 @@ Actions:
       Sources:
         - WorkflowSource
     Configuration:
-      Compute:
-        Fleet: test-fleet-rasarora
-        Type: EC2
       Steps:
         - Run: echo "Hello, World 1!" >> file1.txt
         - Run: echo "Hello, World 2!" >> file2.txt
@@ -37,9 +35,6 @@ Actions:
     DependsOn:
       - Build1
     Configuration:
-      Compute:
-        Fleet: test-fleet-rasarora
-        Type: EC2
       Steps:
         - Run: pwd
         - Run: ls -R
