@@ -38,9 +38,9 @@ Actions:
       Steps:
         - Run: pwd
         - Run: ls -R
+        - Run: env
 #         - Run: cd /codeaws/output
 #         - Run: ls -l
-#         - Run: env
 #       Caching:
 #         FileCaching:
 #           - KeyName: key1
