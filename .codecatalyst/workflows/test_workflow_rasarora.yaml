@@ -1,9 +1,9 @@
 Name: test_workflow_rasarora
 SchemaVersion: "1.0"
 RunMode: PARALLEL
-# Compute:
-#   Type: EC2
-#   SharedInstance: True
+Compute:
+  Type: EC2
+  SharedInstance: True
   
 Triggers:
   - Type: PUSH
@@ -21,15 +21,17 @@ Actions:
         Fleet: test-fleet-rasarora
         Type: EC2
       Steps:
+        - Run: echo "Hello, World 1!" >> file1.txt
+        - Run: echo "Hello, World 2!" >> file2.txt
         - Run: pwd
         - Run: ls -l
-        - Run: env
-      Caching:
-        FileCaching:
-          - KeyName: key1
-            Path: /codeaws/output
-            RestoreKeys:
-              - restore_key1
+#         - Run: env
+#       Caching:
+#         FileCaching:
+#           - KeyName: key1
+#             Path: /codeaws/output
+#             RestoreKeys:
+#               - restore_key1
   Build2:
     Identifier: aws/build-beta@v1
     DependsOn:
@@ -40,11 +42,11 @@ Actions:
         Type: EC2
       Steps:
         - Run: pwd
-        - Run: ls -l
-        - Run: cd /codeaws/output
-        - Run: ls -l
-        - Run: env
-      Caching:
-        FileCaching:
-          - KeyName: key1
-            Path: /codeaws/output
+        - Run: ls -R
+#         - Run: cd /codeaws/output
+#         - Run: ls -l
+#         - Run: env
+#       Caching:
+#         FileCaching:
+#           - KeyName: key1
+#             Path: /codeaws/output
