@@ -42,7 +42,7 @@ Actions:
         - Run: pwd
         - Run: ls -R
         - Run: env
-        # - Run: cat test1/test1.txt
+        - Run: cat codecatalyst_repo/test1/test1.txt
 #         - Run: cd /codeaws/output
 #         - Run: ls -l
 #       Caching:
