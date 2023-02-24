@@ -35,6 +35,9 @@ Actions:
 #               - restore_key1
   Build2:
     Identifier: aws/build-beta@v1
+    Inputs:
+      Sources:
+        - WorkflowSource
     DependsOn:
       - Build1
     Configuration:
