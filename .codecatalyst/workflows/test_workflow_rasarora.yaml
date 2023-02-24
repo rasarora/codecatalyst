@@ -19,11 +19,14 @@ Actions:
         - WorkflowSource
     Configuration:
       Steps:
+        - Run: cat test1/test1.txt
         - Run: echo "Hello, World 1!" >> file1.txt
         - Run: echo "Hello, World 2!" >> file2.txt
+        - Run: echo "Hello, World 2!" >> test1/test1.txt
         - Run: pwd
         - Run: ls -R
         - Run: env
+        - Run: cat test1/test1.txt
 #       Caching:
 #         FileCaching:
 #           - KeyName: key1
@@ -39,6 +42,7 @@ Actions:
         - Run: pwd
         - Run: ls -R
         - Run: env
+        # - Run: cat test1/test1.txt
 #         - Run: cd /codeaws/output
 #         - Run: ls -l
 #       Caching:
